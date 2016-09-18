@@ -1,0 +1,14 @@
+{
+  "name": "nights-proxy",
+  "version": "1.0.0",
+  "description": "Nodejs proxy for Serg Nights projects",
+  "main": "proxy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-proxy": "^1.15.1"
+  }
+}
