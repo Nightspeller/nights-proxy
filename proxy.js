@@ -12,4 +12,4 @@ http.createServer(function(req, res) {
     proxy.web(req, res, {
         target: options[req.headers.host]
     });
-}).listen(5000);
+}).listen(80);
