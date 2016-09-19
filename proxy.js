@@ -8,7 +8,6 @@ var options = {
 };
 
 http.createServer(function(req, res) {
-    console.log(req.headers.host);
     proxy.web(req, res, {
         target: options[req.headers.host]
     });
