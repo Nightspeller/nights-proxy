@@ -4,7 +4,8 @@ var httpProxy = require('http-proxy');
 var proxy = httpProxy.createProxy();
 var options = {
     'nightspeller.net': 'http://127.0.0.1:3001',
-    'streams.nightspeller.net': 'http://127.0.0.1:3002'
+    'streams.nightspeller.net': 'http://127.0.0.1:3002',
+    'lanks.nightspeller.net': 'http://127.0.0.1:4000'
 };
 
 http.createServer(function(req, res) {
