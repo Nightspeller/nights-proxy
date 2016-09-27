@@ -5,6 +5,7 @@ var proxy = httpProxy.createProxy();
 var options = {
     'nightspeller.net': 'http://127.0.0.1:3001',
     'streams.nightspeller.net': 'http://127.0.0.1:3002',
+    'starjourney.nightspeller.net': 'http://127.0.0.1:3004',
     'lanks.nightspeller.net': 'http://127.0.0.1:4000'
 };
 
