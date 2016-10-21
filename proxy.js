@@ -13,8 +13,8 @@ var options = {
 var prevHost = '';
 
 http.createServer(function (req, res) {
-    if (req.headers.host === 'nightspeller.net'){
-        res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    if (req.headers.host === 'nightspeller.net' || req.headers.host === 'www.nightspeller.net'){
+        res.writeHead(301, { "Location": "https://nightspeller.net" + req.url });
         res.end();
     } else {
         if (req.headers.host !== prevHost) {
@@ -30,7 +30,7 @@ http.createServer(function (req, res) {
 
 
 https.createServer({
-    pfx: fs.readFileSync('C:/Users/Administrator/AppData/Roaming/letsencrypt-win-simple/httpsacme-v01.api.letsencrypt.org/nightspeller.net-all.pfx')
+    pfx: fs.readFileSync('C:/SSL/nightspeller.net/nightspeller.net-all.pfx')
 }, function (req, res) {
     if (req.headers.host !== prevHost) {
         console.log(req.headers.host+'\r\n');
