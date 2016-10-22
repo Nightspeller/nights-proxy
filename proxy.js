@@ -11,7 +11,7 @@ var options = {
     'starjourney.nightspeller.net': 'http://127.0.0.1:3004',
     'logistvrn.ru': 'http://127.0.0.1:3005',
     'logist36.ru': 'http://127.0.0.1:3005',
-    'xn--36-glcunsxi.xn--p1ai': 'http://127.0.0.1:3005'
+    'xn--36-glcunsxi.xn--p1ai': 'http://127.0.0.1:3005' //logist36 in ru
 };
 
 var prevHost = '';
