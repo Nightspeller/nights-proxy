@@ -1,7 +1,8 @@
 var http = require('http');
 var https = require('https');
 var httpProxy = require('http-proxy');
-var fs =require('fs');
+var fs = require('fs');
+require("console-stamp")(console, { pattern : "dd/mm/yyyy HH:MM:ss.l" });
 
 var proxy = httpProxy.createProxy();
 var options = {
@@ -21,7 +22,7 @@ http.createServer(function (req, res) {
     if (req.headers.host === 'nightspeller.net' || req.headers.host === 'www.nightspeller.net'){
         res.writeHead(301, { "Location": "https://nightspeller.net" + req.url });
         res.end();
-    } if (req.headers.host === 'www.xn----7sbhdzihcxec9an7e.xn--p1ai') {
+    } else if (req.headers.host === 'www.xn----7sbhdzihcxec9an7e.xn--p1ai') {
         res.writeHead(301, { "Location": "http://xn----7sbhdzihcxec9an7e.xn--p1ai" + req.url });
         res.end();
     } else {

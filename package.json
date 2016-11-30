@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "console-stamp": "^0.2.4",
     "http-proxy": "^1.15.1"
   }
 }
