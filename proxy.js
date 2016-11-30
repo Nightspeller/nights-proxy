@@ -4,6 +4,11 @@ var httpProxy = require('http-proxy');
 var fs = require('fs');
 require("console-stamp")(console, { pattern : "dd/mm/yyyy HH:MM:ss.l" });
 
+process.on('uncaughtException', function (e) {
+    console.error(new Date().toString(), e.stack || e);
+    process.exit(1);
+});
+
 var proxy = httpProxy.createProxy();
 var options = {
     'nightspeller.net': 'http://127.0.0.1:3001',
