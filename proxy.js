@@ -19,6 +19,10 @@ var options = {
 var prevHost = '';
 
 http.createServer(function (req, res) {
+    if (req.headers.host !== prevHost) {
+        console.log(req.headers.host+'\r\n');
+        prevHost = req.headers.host;
+    }
     if (req.headers.host === 'nightspeller.net' || req.headers.host === 'www.nightspeller.net'){
         res.writeHead(301, { "Location": "https://nightspeller.net" + req.url });
         res.end();
@@ -26,10 +30,6 @@ http.createServer(function (req, res) {
         res.writeHead(301, { "Location": "http://xn----7sbhdzihcxec9an7e.xn--p1ai" + req.url });
         res.end();
     } else {
-        if (req.headers.host !== prevHost) {
-            console.log(req.headers.host+'\r\n');
-            prevHost = req.headers.host;
-        }
         var target = options[req.headers.host] ? options[req.headers.host] : 'http://127.0.0.1:3001';
         proxy.web(req, res, {
             target: target
